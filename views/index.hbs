@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Thêm Sản Phẩm</h2>
+    <form action="/add" method="POST">
+        Mã SP: <input type="text" name="code" required>
+        Tên SP: <input type="text" name="name" required>
+        Giá: <input type="number" name="price" required>
+        <button type="submit">Thêm</button>
+    </form>
+
+    <h2>Danh Sách (Dùng tài khoản Read)</h2>
+    <ul>
+        {{#each products}}
+            <li>{{this.code}} - {{this.name}} - Giá sau VAT: {{this.priceWithVAT}}</li>
+        {{/each}}
+    </ul>
+
+    <hr>
+    <footer>
+        <p>Họ tên: {{name}} | MSSV: {{MSSV}} | Mức VAT áp dụng: {{vatRate}}%</p>
+    </footer>
+</body>
+</html>
